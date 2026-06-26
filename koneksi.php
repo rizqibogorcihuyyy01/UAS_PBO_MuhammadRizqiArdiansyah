@@ -5,7 +5,7 @@
  */
 
 $host    = 'localhost';
-$db      = 'db_uas_pbo';
+$db      = 'db_uas_pbo_TRPL1A_MuhmmadRizqiArdiansyah';
 $user    = 'root';
 $pass    = '';
 $charset = 'utf8mb4';

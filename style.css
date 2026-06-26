@@ -1,20 +1,20 @@
 /* 
- * Premium Design Stylesheet
+ * Premium Light Theme Stylesheet
  * File: style.css
- * Desain modern bertema Glassmorphism dengan warna harmonis.
+ * Desain modern bertema Light Mode dengan warna harmonis dan bersih.
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
 
 :root {
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-card: rgba(30, 41, 59, 0.7);
-    --border-card: rgba(255, 255, 255, 0.08);
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --border-card: rgba(0, 0, 0, 0.06);
     
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
     
     /* Category Colors */
     --color-mandiri-start: #6366f1;
@@ -53,17 +53,17 @@ body {
     background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-    background: #334155;
+    background: #cbd5e1;
     border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #475569;
+    background: #94a3b8;
 }
 
 /* Layout Wrapper */
 .sidebar {
     width: var(--sidebar-width);
-    background-color: #0b0f19;
+    background-color: var(--bg-secondary);
     border-right: 1px solid var(--border-card);
     height: 100vh;
     position: fixed;
@@ -73,6 +73,7 @@ body {
     flex-direction: column;
     z-index: 100;
     transition: var(--transition-smooth);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
 }
 
 .sidebar-header {
@@ -87,7 +88,7 @@ body {
     font-family: 'Outfit', sans-serif;
     font-size: 20px;
     font-weight: 700;
-    background: linear-gradient(to right, #38bdf8, #818cf8);
+    background: linear-gradient(to right, #0284c7, #4f46e5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: flex;
@@ -119,13 +120,14 @@ body {
 
 .menu-item a:hover, 
 .menu-item.active a {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(15, 23, 42, 0.04);
     color: var(--text-primary);
 }
 
 .menu-item.active a {
-    border-left: 4px solid #38bdf8;
-    background: rgba(56, 189, 248, 0.1);
+    border-left: 4px solid #0284c7;
+    background: rgba(2, 132, 199, 0.08);
+    font-weight: 600;
 }
 
 .sidebar-footer {
@@ -147,7 +149,7 @@ body {
 
 .navbar {
     height: var(--navbar-height);
-    background-color: rgba(15, 23, 42, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-card);
     display: flex;
@@ -157,6 +159,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 90;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
 }
 
 .navbar-title {
@@ -176,12 +179,12 @@ body {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    background: linear-gradient(135deg, #0ea5e9, #6366f1);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    color: var(--bg-primary);
+    color: #ffffff;
 }
 
 .user-info {
@@ -192,6 +195,7 @@ body {
 .user-name {
     font-size: 14px;
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 .user-role {
@@ -209,8 +213,8 @@ body {
 
 /* DB Setup Warning */
 .db-alert {
-    background: rgba(239, 68, 68, 0.1);
-    border: 1px solid rgba(239, 68, 68, 0.2);
+    background: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.15);
     border-radius: 16px;
     padding: 24px;
     margin-bottom: 32px;
@@ -220,7 +224,7 @@ body {
 }
 
 .db-alert h4 {
-    color: #ef4444;
+    color: #dc2626;
     font-family: 'Outfit', sans-serif;
     font-size: 18px;
     display: flex;
@@ -235,12 +239,13 @@ body {
 }
 
 .db-alert code {
-    background: #090d16;
+    background: #f1f5f9;
     padding: 12px;
     border-radius: 8px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 13px;
-    color: #f43f5e;
+    color: #be123c;
+    border: 1px solid #e2e8f0;
     overflow-x: auto;
 }
 
@@ -261,12 +266,13 @@ body {
     align-items: center;
     gap: 16px;
     transition: var(--transition-smooth);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
 }
 
 .kpi-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .kpi-icon {
@@ -279,11 +285,11 @@ body {
     font-size: 20px;
 }
 
-.kpi-icon.all { background: rgba(56, 189, 248, 0.1); color: #38bdf8; }
-.kpi-icon.mandiri { background: rgba(99, 102, 241, 0.1); color: #6366f1; }
-.kpi-icon.bidikmisi { background: rgba(16, 185, 129, 0.1); color: #10b981; }
-.kpi-icon.prestasi { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
-.kpi-icon.tagihan { background: rgba(236, 72, 153, 0.1); color: #ec4899; }
+.kpi-icon.all { background: rgba(2, 132, 199, 0.08); color: #0284c7; }
+.kpi-icon.mandiri { background: rgba(99, 102, 241, 0.08); color: #4f46e5; }
+.kpi-icon.bidikmisi { background: rgba(16, 185, 129, 0.08); color: #059669; }
+.kpi-icon.prestasi { background: rgba(245, 158, 11, 0.08); color: #d97706; }
+.kpi-icon.tagihan { background: rgba(236, 72, 153, 0.08); color: #db2777; }
 
 .kpi-data {
     display: flex;
@@ -294,6 +300,7 @@ body {
     font-family: 'Outfit', sans-serif;
     font-size: 22px;
     font-weight: 700;
+    color: var(--text-primary);
 }
 
 .kpi-lbl {
@@ -306,6 +313,7 @@ body {
 .section-container {
     margin-bottom: 40px;
     scroll-margin-top: 90px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .section-header {
@@ -314,7 +322,7 @@ body {
     justify-content: space-between;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid var(--border-card);
+    border-bottom: 2px solid #e2e8f0;
 }
 
 .section-title {
@@ -324,6 +332,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    color: var(--text-primary);
 }
 
 .badge {
@@ -338,19 +347,16 @@ body {
 .badge-mandiri {
     background: linear-gradient(135deg, var(--color-mandiri-start), var(--color-mandiri-end));
     color: #fff;
-    box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
 }
 
 .badge-bidikmisi {
     background: linear-gradient(135deg, var(--color-bidikmisi-start), var(--color-bidikmisi-end));
     color: #fff;
-    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
 }
 
 .badge-prestasi {
     background: linear-gradient(135deg, var(--color-prestasi-start), var(--color-prestasi-end));
     color: #fff;
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
 }
 
 /* Glass Table Card */
@@ -359,14 +365,13 @@ body {
     border: 1px solid var(--border-card);
     border-radius: 18px;
     overflow: hidden;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.02), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
     margin-bottom: 24px;
     transition: var(--transition-smooth);
 }
 
 .table-card:hover {
-    border-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .table-responsive {
@@ -381,7 +386,7 @@ table {
 }
 
 th {
-    background-color: rgba(15, 23, 42, 0.4);
+    background-color: #f1f5f9;
     padding: 16px 24px;
     font-size: 13px;
     font-weight: 600;
@@ -395,7 +400,7 @@ td {
     padding: 18px 24px;
     font-size: 14px;
     color: var(--text-primary);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid #f1f5f9;
 }
 
 tr:last-child td {
@@ -403,27 +408,27 @@ tr:last-child td {
 }
 
 tr:hover td {
-    background-color: rgba(255, 255, 255, 0.02);
+    background-color: #f8fafc;
 }
 
 /* Helper styles */
 .text-highlight {
-    color: #38bdf8;
+    color: #0284c7;
     font-weight: 600;
 }
 
 .text-success {
-    color: #10b981;
+    color: #16a34a;
     font-weight: 600;
 }
 
 .text-warning {
-    color: #f59e0b;
+    color: #d97706;
     font-weight: 600;
 }
 
 .text-tagihan {
-    color: #ec4899;
+    color: #db2777;
     font-weight: 700;
 }
 

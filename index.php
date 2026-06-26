@@ -104,17 +104,17 @@ if ($db_connected && $pdo !== null) {
             </div>
         </div>
         <ul class="sidebar-menu">
-            <li class="menu-item active">
-                <a href="#dashboard"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+            <li class="menu-item active" data-target="all">
+                <a href="javascript:void(0)" onclick="switchTab('all')"><i class="fa-solid fa-chart-pie"></i> Semua Jalur</a>
             </li>
-            <li class="menu-item">
-                <a href="#mandiri-section"><i class="fa-solid fa-wallet text-highlight"></i> Jlr. Mandiri</a>
+            <li class="menu-item" data-target="mandiri">
+                <a href="javascript:void(0)" onclick="switchTab('mandiri')"><i class="fa-solid fa-wallet text-highlight"></i> Jlr. Mandiri</a>
             </li>
-            <li class="menu-item">
-                <a href="#bidikmisi-section"><i class="fa-solid fa-hand-holding-dollar text-success"></i> Jlr. Bidikmisi</a>
+            <li class="menu-item" data-target="bidikmisi">
+                <a href="javascript:void(0)" onclick="switchTab('bidikmisi')"><i class="fa-solid fa-hand-holding-dollar text-success"></i> Jlr. Bidikmisi</a>
             </li>
-            <li class="menu-item">
-                <a href="#prestasi-section"><i class="fa-solid fa-award text-warning"></i> Jlr. Prestasi</a>
+            <li class="menu-item" data-target="prestasi">
+                <a href="javascript:void(0)" onclick="switchTab('prestasi')"><i class="fa-solid fa-award text-warning"></i> Jlr. Prestasi</a>
             </li>
         </ul>
         <div class="sidebar-footer">
@@ -134,7 +134,7 @@ if ($db_connected && $pdo !== null) {
             
             <!-- Pencarian Instan -->
             <div style="position: relative; width: 300px;">
-                <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Cari nama atau NIM..." style="width: 100%; padding: 10px 16px 10px 40px; border-radius: 20px; border: 1px solid var(--border-card); background: var(--bg-secondary); color: var(--text-primary); outline: none; font-size: 13px; transition: var(--transition-smooth);">
+                <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Cari nama atau NIM..." style="width: 100%; padding: 10px 16px 10px 40px; border-radius: 20px; border: 1px solid var(--border-card); background: var(--bg-primary); color: var(--text-primary); outline: none; font-size: 13px; transition: var(--transition-smooth); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
                 <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 16px; top: 13px; color: var(--text-muted);"></i>
             </div>
 
@@ -167,7 +167,7 @@ if ($db_connected && $pdo !== null) {
 
             <!-- KPI Statistik Grid -->
             <section class="kpi-grid">
-                <div class="kpi-card">
+                <div class="kpi-card" onclick="switchTab('all')" style="cursor: pointer;">
                     <div class="kpi-icon all">
                         <i class="fa-solid fa-users"></i>
                     </div>
@@ -176,7 +176,7 @@ if ($db_connected && $pdo !== null) {
                         <span class="kpi-lbl">Total Mahasiswa</span>
                     </div>
                 </div>
-                <div class="kpi-card">
+                <div class="kpi-card" onclick="switchTab('mandiri')" style="cursor: pointer;">
                     <div class="kpi-icon mandiri">
                         <i class="fa-solid fa-user-tie"></i>
                     </div>
@@ -185,7 +185,7 @@ if ($db_connected && $pdo !== null) {
                         <span class="kpi-lbl">Jalur Mandiri</span>
                     </div>
                 </div>
-                <div class="kpi-card">
+                <div class="kpi-card" onclick="switchTab('bidikmisi')" style="cursor: pointer;">
                     <div class="kpi-icon bidikmisi">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </div>
@@ -194,7 +194,7 @@ if ($db_connected && $pdo !== null) {
                         <span class="kpi-lbl">Jalur Bidikmisi</span>
                     </div>
                 </div>
-                <div class="kpi-card">
+                <div class="kpi-card" onclick="switchTab('prestasi')" style="cursor: pointer;">
                     <div class="kpi-icon prestasi">
                         <i class="fa-solid fa-star"></i>
                     </div>
@@ -251,7 +251,7 @@ if ($db_connected && $pdo !== null) {
                                             <td class="text-highlight"><?php echo htmlspecialchars($mhs->getNim()); ?></td>
                                             <td style="font-weight: 600;"><?php echo htmlspecialchars($mhs->getNamaMahasiswa()); ?></td>
                                             <td>Smstr <?php echo $mhs->getSemester(); ?></td>
-                                            <td><span style="background: rgba(255,255,255,0.05); padding: 4px 8px; border-radius: 6px; font-size: 12px;"><?php echo htmlspecialchars($mhs->getGolonganUkt()); ?></span></td>
+                                            <td><span style="background: #f1f5f9; padding: 4px 8px; border-radius: 6px; font-size: 12px; border: 1px solid var(--border-card);"><?php echo htmlspecialchars($mhs->getGolonganUkt()); ?></span></td>
                                             <td><?php echo htmlspecialchars($mhs->getNamaWali()); ?></td>
                                             <td>Rp <?php echo number_format($mhs->getTarifUktNominal(), 0, ',', '.'); ?></td>
                                             <td class="text-success">Rp 100.000</td>
@@ -301,7 +301,7 @@ if ($db_connected && $pdo !== null) {
                                             <td class="text-highlight"><?php echo htmlspecialchars($mhs->getNim()); ?></td>
                                             <td style="font-weight: 600;"><?php echo htmlspecialchars($mhs->getNamaMahasiswa()); ?></td>
                                             <td>Smstr <?php echo $mhs->getSemester(); ?></td>
-                                            <td><span style="border: 1px solid rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.05); color: #10b981; padding: 4px 8px; border-radius: 6px; font-size: 12px;"><?php echo htmlspecialchars($mhs->getNomorKipKuliah()); ?></span></td>
+                                            <td><span style="border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(16, 185, 129, 0.05); color: #059669; padding: 4px 8px; border-radius: 6px; font-size: 12px; font-weight: 500;"><?php echo htmlspecialchars($mhs->getNomorKipKuliah()); ?></span></td>
                                             <td class="text-success">Rp <?php echo number_format($mhs->getDanaSakuSubsidi(), 0, ',', '.'); ?> / bln</td>
                                             <td style="text-decoration: line-through; color: var(--text-muted);">Rp <?php echo number_format($mhs->getTarifUktNominal(), 0, ',', '.'); ?></td>
                                             <td class="text-success" style="font-weight: bold;">Rp 0 (Gratis)</td>
@@ -368,8 +368,9 @@ if ($db_connected && $pdo !== null) {
         </main>
     </div>
 
-    <!-- Client-side Instant Filter Script -->
+    <!-- Client-side Interactive Scripts -->
     <script>
+        // Fungsi pencarian instan
         function filterTable() {
             var input = document.getElementById("searchInput");
             var filter = input.value.toLowerCase();
@@ -390,31 +391,41 @@ if ($db_connected && $pdo !== null) {
             }
         }
 
-        // Active state in sidebar navigation based on scrolling
-        window.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    const id = entry.target.getAttribute('id');
-                    if (entry.intersectionRatio > 0.1) {
-                        document.querySelectorAll('.sidebar-menu .menu-item').forEach(item => {
-                            item.classList.remove('active');
-                        });
-                        
-                        let activeLink = document.querySelector(`.sidebar-menu .menu-item a[href="#${id}"]`);
-                        if (activeLink) {
-                            activeLink.parentElement.classList.add('active');
-                        } else if (id === 'dashboard') {
-                            document.querySelector('.sidebar-menu .menu-item:first-child').classList.add('active');
-                        }
-                    }
-                });
-            });
+        // Fungsi berpindah tab / kategori jalur mahasiswa (Hanya menampilkan jalur yang dipilih)
+        function switchTab(category) {
+            // 1. Perbarui status active di menu sidebar
+            const menuItems = document.querySelectorAll('.sidebar-menu .menu-item');
+            menuItems.forEach(item => item.classList.remove('active'));
+            
+            const activeItem = document.querySelector(`.sidebar-menu .menu-item[data-target="${category}"]`);
+            if (activeItem) {
+                activeItem.classList.add('active');
+            }
 
-            // Track all sections
-            document.querySelectorAll('section[id], div[id="dashboard"]').forEach((section) => {
-                observer.observe(section);
+            // 2. Sembunyikan/Tampilkan bagian tabel dengan transisi halus
+            const sections = {
+                'mandiri': document.getElementById('mandiri-section'),
+                'bidikmisi': document.getElementById('bidikmisi-section'),
+                'prestasi': document.getElementById('prestasi-section')
+            };
+
+            Object.keys(sections).forEach(key => {
+                const section = sections[key];
+                if (category === 'all' || category === key) {
+                    section.style.display = 'block';
+                    // Animasi fade-in halus
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(10px)';
+                    setTimeout(() => {
+                        section.style.transition = 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                        section.style.opacity = '1';
+                        section.style.transform = 'translateY(0)';
+                    }, 20);
+                } else {
+                    section.style.display = 'none';
+                }
             });
-        });
+        }
     </script>
 </body>
 </html>

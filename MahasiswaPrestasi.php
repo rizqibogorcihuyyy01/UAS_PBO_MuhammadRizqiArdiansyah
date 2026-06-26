@@ -44,10 +44,10 @@ class MahasiswaPrestasi extends Mahasiswa {
 
     /**
      * Implementasi hitungTagihanSemester
-     * Mahasiswa beasiswa prestasi membayar tarif UKT yang tercatat (biasanya disesuaikan/dikurangi oleh beasiswa).
+     * Mahasiswa prestasi mendapatkan potongan beasiswa sebesar 75%, sehingga cukup membayar 25% dari tarif UKT aslinya.
      */
     public function hitungTagihanSemester(): float {
-        return $this->tarifUktNominal;
+        return $this->tarifUktNominal * 0.25;
     }
 
     /**

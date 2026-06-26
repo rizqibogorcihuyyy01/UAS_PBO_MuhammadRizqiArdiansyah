@@ -44,7 +44,7 @@ class MahasiswaBidikMisi extends Mahasiswa {
 
     /**
      * Implementasi hitungTagihanSemester
-     * Mahasiswa Bidikmisi tidak membayar UKT karena disubsidi penuh (tagihan = Rp 0).
+     * Mahasiswa Bidikmisi digratiskan penuh (tagihan = Rp 0) karena ditanggung negara melalui skema KIP-Kuliah.
      */
     public function hitungTagihanSemester(): float {
         return 0.0;

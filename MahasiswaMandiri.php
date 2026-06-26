@@ -44,10 +44,10 @@ class MahasiswaMandiri extends Mahasiswa {
 
     /**
      * Implementasi hitungTagihanSemester
-     * Mahasiswa mandiri membayar penuh sesuai tarif UKT nominal yang berlaku.
+     * Mahasiswa mandiri membayar penuh sesuai tarif UKT nominal ditambah biaya operasional Rp100.000.
      */
     public function hitungTagihanSemester(): float {
-        return $this->tarifUktNominal;
+        return $this->tarifUktNominal + 100000.00;
     }
 
     /**

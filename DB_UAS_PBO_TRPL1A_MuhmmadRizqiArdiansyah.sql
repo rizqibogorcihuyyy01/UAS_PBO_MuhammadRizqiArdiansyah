@@ -60,7 +60,7 @@ INSERT INTO tabel_mahasiswa (
 -- Kategori 3: Mahasiswa Prestasi (6 Baris)
 ('Amelia Putri', '202401015', 2, 2000000.00, 'Prestasi', NULL, NULL, NULL, NULL, 'Dinas Pendidikan', 3.50),
 ('Guntur Wibowo', '202401016', 2, 1500000.00, 'Prestasi', NULL, NULL, NULL, NULL, 'Yayasan Supersemar', 3.25),
-('Mega Utami', '202401017', 4, 0.00, 'Prestasi', NULL, NULL, NULL, NULL, 'PT Djarum', 3.75),
+('Mega Utami', '202401017', 4, 9000000.00, 'Prestasi', NULL, NULL, NULL, NULL, 'PT Djarum', 3.75),
 ('Yusuf Mahendra', '202401018', 2, 2500000.00, 'Prestasi', NULL, NULL, NULL, NULL, 'Bank Indonesia', 3.40),
 ('Indah Permata', '202401019', 4, 1000000.00, 'Prestasi', NULL, NULL, NULL, NULL, 'Kementerian Pemuda dan Olahraga', 3.30),
-('Roni Syahputra', '202401020', 6, 0.00, 'Prestasi', NULL, NULL, NULL, NULL, 'Pertamina Foundation', 3.60);
+('Roni Syahputra', '202401020', 6, 6000000.00, 'Prestasi', NULL, NULL, NULL, NULL, 'Pertamina Foundation', 3.60);
